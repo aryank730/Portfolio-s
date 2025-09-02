@@ -3,7 +3,7 @@ import Email from './Email'
 
 const Dailog = () => {
   return (
-    <div><section className="w-full py-36 flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#10111D] to-[#655b91]">
+    <div><section className="w-full py-12 flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#10111D] to-[#655b91]">
       {/* Overlay for better text visibility */}
       <div className="absolute inset-0 bg-black bg-opacity-50" />
       {/* Content */}

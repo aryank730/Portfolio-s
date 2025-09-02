@@ -51,10 +51,10 @@ const Knowlwdge = () => {
                             </div> */}
 
                         </div>
-                        <div className="md:w-1/2 relative">
+                        <div className="md:w-1/2 relative mt-8">
                             <div className="relative z-10">
                                 <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                                    <div className="aspect-[4/5] bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+                                    <div className="aspect-[4/4] bg-gradient-to-br from-gray-900 via-gray-800 to-black">
                                         <div className="absolute inset-0 flex items-center justify-center">
                                             <div className="w-fit px-4 flex flex-wrap gap-5">
 
