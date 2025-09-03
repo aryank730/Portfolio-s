@@ -3,7 +3,7 @@ import React from 'react'
 const Knowlwdge = () => {
     return (
         <>
-            <div className=" bg-gradient-to-b from-[#10111D] to-[#655b91] min-h-[90vh] flex items-center relative overflow-hidden">
+            <div className=" bg-gradient-to-b from-[#10111D] to-[#655b91] py-12 md:py-0 flex items-center relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full">
                     <svg className="absolute top-0 right-0 text-pink-500/20 w-1/3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                         <path fill="currentColor" d="M44.9,-76.2C59.7,-69.2,74.1,-59.3,83.1,-45.4C92.1,-31.6,95.8,-13.9,94.3,3.2C92.7,20.3,86,36.9,75.6,50.1C65.1,63.4,50.9,73.3,35.9,78.9C20.8,84.5,4.9,85.7,-10.6,83.1C-26.1,80.5,-41.3,74.1,-53.3,64.1C-65.3,54.2,-74.1,40.7,-79.7,25.8C-85.3,10.9,-87.6,-5.4,-84.1,-20.5C-80.7,-35.5,-71.5,-49.3,-59.1,-57.3C-46.8,-65.3,-31.4,-67.5,-17.1,-74.2C-2.8,-80.9,10.3,-92.2,24.3,-90.6C38.4,-89.1,53.3,-74.8,61.1,-61C68.9,-47.3,71.5,-34.2,74,-21.2C76.6,-8.1,79.2,4.9,77.2,17.5C75.1,30.1,68.3,42.2,58.7,50.3C49.2,58.3,36.8,62.2,24.1,65.5C11.4,68.7,-1.6,71.3,-15.2,71.4C-28.8,71.5,-43,69.1,-55.3,62.3C-67.7,55.5,-78.2,44.3,-83.1,30.9C-88,17.4,-87.2,1.8,-83.2,-12.4C-79.3,-26.6,-72.2,-39.5,-62.1,-49.2C-51.9,-59,-38.7,-65.7,-25.4,-71.1C-12.1,-76.6,1.3,-80.8,14.4,-80.1C27.5,-79.4,40.3,-73.7,44.9,-76.2Z" transform="translate(100 100)" />
@@ -40,25 +40,17 @@ const Knowlwdge = () => {
                                 experiences
                             </h1>
                             <p className="text-gray-400 text-lg leading-relaxed">We're a creative collective that combines strategic thinking with cutting-edge design to craft distinctive digital experiences that resonate with audiences worldwide.</p>
-                            {/* <div className="flex flex-col sm:flex-row gap-4">
-                                <button className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group">
-                                    View Our Work
-                                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                                <button className="border-2 border-white/30 text-white hover:border-white hover:bg-white/5 px-8 py-4 rounded-lg transition-colors duration-300">Contact Us</button>
-                            </div> */}
 
                         </div>
-                        <div className="md:w-1/2 relative mt-8">
-                            <div className="relative z-10">
+                        <div className="md:w-1/2 relative mt-8 hidden md:block">
+                            <div className="relative z-10 ">
                                 <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                                     <div className="aspect-[4/4] bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+                                        <p className='text-center font-semibold text-2xl text-amber-50 pt-6'>MERN Stack</p>
                                         <div className="absolute inset-0 flex items-center justify-center">
                                             <div className="w-fit px-4 flex flex-wrap gap-5">
 
-                                                
+
                                                 {/* React.js */}
                                                 <div className="bg-white/10 backdrop-blur-sm rounded-lg text-center m-auto">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="140" height="60"
@@ -83,7 +75,7 @@ const Knowlwdge = () => {
                                                     </svg>
                                                 </div>
 
-                                                 {/* Next.js */}
+                                                {/* Next.js */}
                                                 <div className="bg-white/10 backdrop-blur-sm rounded-lg text-center m-auto">
                                                     <svg width="140" height="60" viewBox="0 0 148 90" class="text-white ">
                                                         <path
@@ -118,7 +110,7 @@ const Knowlwdge = () => {
                                                 {/* </div> */}
 
 
-                                               
+
                                             </div>
                                         </div>
                                         <div className="absolute top-1/4 left-10 w-8 h-8 border border-white/20 rounded-full animate-pulse opacity-50" />
