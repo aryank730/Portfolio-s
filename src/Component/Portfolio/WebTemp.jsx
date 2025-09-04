@@ -93,8 +93,7 @@ export const AppTemp = () => {
             Live Projects to <span className="text-indigo-600">Explore</span>
           </h1>
           <p className="text-gray-500 dark:text-white">
-            Webby is a PHP Framework built on top of Codeigniter 3 for easy PHP web
-            application development using both HMVC and MVC patterns
+            collection of real-time web applications developed to solve practical problems using scalable architecture, clean code practices, and modern development workflows.
           </p>
         </div>
         <div className="flex flex-col justify-center space-y-5 md:flex-row md:space-y-0 md:space-x-6 lg:space-x-10 mt-7 mb-8">
@@ -133,7 +132,7 @@ export const AppTemp = () => {
 
       {/* give languages at the end  */}
 
-      <div class="max-w-3xl mx-auto px-5 mb-28">
+      {/* <div class="max-w-3xl mx-auto px-5 mb-28">
         <div class="flex flex-col justify-center">
 
           <div class="text-center">
@@ -247,7 +246,7 @@ export const AppTemp = () => {
 
         </div>
 
-      </div>
+      </div> */}
 
     </>
   )

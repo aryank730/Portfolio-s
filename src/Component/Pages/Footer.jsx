@@ -1,8 +1,10 @@
 import { FaGithub, FaLinkedin, FaWhatsapp, FaTimes, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import { } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
+import "./Footer.css"
 import { RiTelegram2Fill } from "react-icons/ri";
 import { CiLinkedin } from "react-icons/ci";
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -12,7 +14,7 @@ const Footer = () => {
         {/* Branding + Social */}
         <div>
           <h1 className="text-2xl font-bold">
-            <span className="text-black">React JS Developer</span>
+            <span className="text-black">MERN Stack Developer</span>
           </h1>
           <p className="text-gray-600 mt-3">
             Crafting engaging digital experiences with attention to detail and a passion for clean, functional design.
@@ -41,31 +43,34 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div>
-          <section id="CallMe" class="relative  ">
-            <div class="z-20 relative px-5 m-auto  flex flex-wrap gap-7 justify-center  mx-auto ">
-
-              <div class=" bg-white p-4 rounded-xl shadow hover:shadow-lg flex text-center items-center gap-2 ">
-                <FaWhatsapp size={28} />
-                <p class="text-sm text-center font-regular text-[#A4A4A5] sm:text-md  "><a target="_blank"
-                  href="https://wa.me/6387291201">+91 Whatsapp</a></p>
+        <div className="m-auto  raltive">
+          <div className=" relative w-1/3 m-auto pb-12">
+            <div className="loader">
+              <span>
+                <span />
+                <span />
+                <span />
+                <span />
+              </span>
+              <div className="base">
+                <span />
+                <div className="face" />
               </div>
-
-              <a target="_blank" href="https://www.linkedin.com/in/aryank730">
-                <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg flex text-center items-center gap-2">
-                  <CiLinkedin size={28} />
-                  <p class="text-sm text-center font-regular text-[#A4A4A5] sm:text-md ">aryank730</p>
-                </div>
-              </a>
-
-              <a href='https://github.com/aryank730' target='blank'>
-                <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg flex text-center items-center gap-2">
-                  <FaGithub size={28} />
-                  <p class="text-sm text-center font-regular text-[#A4A4A5] sm:text-md ">@aryank730</p>
-                </div>
-              </a>
             </div>
-          </section>
+            <div className="longfazers">
+              <span />
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+          <NavLink to="/Contact" >
+          <button class=" abcolute mt-6 md:mt-12 m-auto cursor-pointer items-center justify-center rounded-xl border-[1.58px] border-zinc-600 bg-zinc-950 px-5 py-3 font-medium text-slate-200 shadow-md transition-all duration-300 hover:[transform:translateY(-.335rem)] hover:shadow-xl"
+          >
+            Contact Us 
+            {/* <span class="text-slate-300/85"> ─ simple button</span> */}
+          </button>
+          </NavLink>
         </div>
 
         {/* Contact Info */}
