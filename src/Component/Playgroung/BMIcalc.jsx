@@ -32,7 +32,7 @@ const BMIcalc = () => {
 
     return (
         <>
-            <form className='bg-white p-4 rounded-2xl justify-center align-center'>
+            <form className='bg-white p-4 mt-24 rounded-2xl justify-center align-center'>
                 <label htmlFor='high'>Height (cm):</label> 
                 <input   id='high' className='p-2 border-black bg-gray-50 outline-blue-400 m-4' type="text" onChange={(e) => setHeight(e.target.value)} value={height} placeholder='Enter you Height' /><br />
                 
