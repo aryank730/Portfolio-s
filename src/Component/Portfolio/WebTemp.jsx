@@ -14,7 +14,7 @@ export const WebTemp = () => {
             className="absolute inset-0 h-fit w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50"
           />
           <div className="relative p-4 sm:p-6 lg:p-8">
-            <p className="text-sm font-medium tracking-widest text-pink-500 uppercase">
+            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase">
               Development for
             </p>
             <p className="text-xl flex items-center gap-4 font-bold text-white sm:text-2xl">An E-commerce Project MERN Stack<span><FaGithub /></span></p>
@@ -38,7 +38,7 @@ export const WebTemp = () => {
             className="absolute inset-0 h-fit w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50"
           />
           <div className="relative p-4 sm:p-6 lg:p-8">
-            <p className="text-sm font-medium tracking-widest text-pink-500 uppercase">
+            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase">
               Development for
             </p>
             <p className="text-xl flex items-center gap-4 font-bold text-white sm:text-2xl">A Employee Managment Project <span><FaGithub /></span></p>
@@ -61,7 +61,7 @@ export const WebTemp = () => {
             className="absolute inset-0 h-fit w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50"
           />
           <div className="relative p-4 sm:p-6 lg:p-8">
-            <p className="text-sm font-medium tracking-widest text-pink-500 uppercase">
+            <p className="text-sm font-medium tracking-widest text-gray-800 uppercase">
               Development for
             </p>
             <p className="text-xl flex items-center gap-4 font-bold text-white sm:text-2xl">A Edu Tech Managment Project <span><FaGithub /></span></p>

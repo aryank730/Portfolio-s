@@ -3,13 +3,13 @@ import Email from './Email'
 
 const Dailog = () => {
   return (
-    <div><section className="w-full py-12 flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#10111D] to-[#655b91]">
+    <div><section className="w-full py-12  flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#10111D] to-[#655b91]">
       {/* Overlay for better text visibility */}
       <div className="absolute inset-0 bg-black bg-opacity-50" />
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div
-          className="mb-6  text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight "
+          className="mb-6  text-2xl md:text-4xl lg:text-4xl font-bold tracking-tight "
           style={{ lineHeight: "1.2" }}
         >
           We Make{" "}

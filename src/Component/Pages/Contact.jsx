@@ -88,28 +88,40 @@ const Contact = () => {
           </p>
 
           <div className="space-y-4">
+            {/* Location */}
             <div>
               <h4 className="text-lg font-normal">Location</h4>
-              <address className="flex items-start gap-1 pt-3">
-                <IoLocationOutline className="text-blue-500 text-2xl" />
+              <address className="flex items-start gap-2 pt-3 not-italic">
+                <IoLocationOutline size={24} className="text-blue-500 text-2xl" />
                 <span>Noida, Uttar Pradesh, India</span>
               </address>
             </div>
+
+            {/* Email */}
             <div>
               <h4 className="text-lg font-medium mt-4">Email</h4>
-              <p className="flex items-center gap-2 hover:underline">
-                <MdOutlineEmail className="text-blue-500" />
+              <a
+                href="mailto:rikkypatel730@gmail.com"
+                className="flex items-center gap-2  text-blue-950"
+              >
+                <MdOutlineEmail size={22} className="text-blue-500" />
                 rikkypatel730@gmail.com
-              </p>
+              </a>
             </div>
+
+            {/* Phone */}
             <div>
               <h4 className="text-lg font-medium mt-4">Phone</h4>
-              <p className="flex items-center gap-2">
-                <FaPhoneAlt className="text-blue-500" />
+              <a
+                href="tel:+916387291201"
+                className="flex items-center gap-2  text-blue-950"
+              >
+                <FaPhoneAlt size={18} className="text-blue-500" />
                 +91 6387291201
-              </p>
+              </a>
             </div>
           </div>
+
           {/* whasapp button */}
 
           <a
@@ -208,7 +220,7 @@ const Contact = () => {
                 type="submit"
                 className="py-1 px-5 rounded-xl hover:text-blue-400 hover:border-blue-400 border-2 hover:bg-gray-50 cursor-pointer bg-blue-400 text-gray-50"
               >
-                Send Message
+                Send Contact
               </button>
             </div>
           </form>

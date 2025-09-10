@@ -22,7 +22,7 @@ const AboutSection = () => {
             effortless, where the technology fades into the background and allows the content to take center
             stage.
           </p>
-          <NavLink to="/" className="text-indigo-500 font-semibold hover:underline inline-flex items-center gap-1">
+          <NavLink to="/contact" className="text-indigo-500 font-semibold hover:underline inline-flex items-center gap-1">
             Let’s work together <span>&rarr;</span>
           </NavLink>
         </div>
