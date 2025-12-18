@@ -8,7 +8,8 @@ import { FaGithub } from "react-icons/fa";
 export const WebTemp = () => {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-3 items-center  justify-center flex-col sm:flex-row gap-4 p-4 n bg-slate-1000 dark:bg-slate-900 ">
+    <h3 className="text-3xl font-medium text-white bg bg-slate-900 text-center pt-10 pb-6">Major Projects</h3>
+      <div className="grid grid-cols-1 md:grid-cols-3 items-center  justify-center flex-col sm:flex-row gap-4 p-4 pb-16 n bg-slate-1000 dark:bg-slate-900 ">
         <a target='blanck' href="https://github.com/aryank730/Ecommerce-API" className="group relative block bg-black rounded-lg overflow-hidden" >
           <img alt="" src={ecom}
             className="absolute inset-0 h-fit w-full rounded-lg object-cover opacity-75 transition-opacity group-hover:opacity-50"

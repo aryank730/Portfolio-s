@@ -18,7 +18,7 @@ const MainPort = () => {
       {/* <Homnes/> */}
       <Performance />
       {/* <Projet/> */}
-      <h3 className="text-3xl font-medium text-gray-700 text-center mb-4">Major Projects</h3>
+      
       <WebTemp />
       <Dailog />
       <About />

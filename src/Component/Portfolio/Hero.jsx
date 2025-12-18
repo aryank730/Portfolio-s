@@ -1,9 +1,7 @@
-import React from 'react'
-import Rank from './Rank'
-import { NavLink } from 'react-router-dom'
-import Aplayground from '../Pages/Aplayground'
+import React, { useState, useEffect } from 'react';
 import { SiGmail } from "react-icons/si";
-import myimg from '../../assets/myimg.png'
+import myimg from '../../assets/myimg.png';
+import Snowfall from 'react-snowfall';
 import {
     FaHtml5,
     FaCss3Alt,
@@ -13,14 +11,39 @@ import {
     FaGitAlt
 } from 'react-icons/fa';
 import {
-    SiTypescript,
     SiTailwindcss,
     SiMongodb,
     SiExpress,
-    SiWebpack,
     SiPostman,
-    SiBootstrap,
 } from 'react-icons/si';
+
+// Indian seasons mapping
+const INDIAN_SEASONS = {
+  WINTER: { 
+    months: [12, 1, 2], 
+    name: 'Winter', 
+    effect: 'snow',
+    color: '#82C3D9'
+  },
+  SPRING: { 
+    months: [3, 4], 
+    name: 'Spring', 
+    effect: 'springBreeze',
+    color: '#9ACD32'
+  },
+  SUMMER: { 
+    months: [5, 6, 7, 8, 9], 
+    name: 'Summer', 
+    effect: 'summer',
+    color: '#FFD700'
+  },
+  AUTUMN: { 
+    months: [10, 11], 
+    name: 'Autumn', 
+    effect: 'autumn',
+    color: '#8B4513'
+  }
+};
 
 const skills = [
     { name: 'React', icon: <FaReact />, color: 'text-sky-500', bg: 'bg-sky-100' },
@@ -30,22 +53,247 @@ const skills = [
     { name: 'HTML', icon: <FaHtml5 />, color: 'text-orange-500', bg: 'bg-orange-100' },
     { name: 'CSS', icon: <FaCss3Alt />, color: 'text-blue-500', bg: 'bg-blue-100' },
     { name: 'JavaScript', icon: <FaJs />, color: 'text-yellow-500', bg: 'bg-yellow-100' },
-    // { name: 'Bootstrap', icon: <SiBootstrap />, color: 'text-purple-600', bg: 'bg-purple-100' },
     { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: 'text-cyan-400', bg: 'bg-cyan-100' },
     { name: 'Git', icon: <FaGitAlt />, color: 'text-red-500', bg: 'bg-red-100' },
-    // { name: 'Webpack', icon: <SiWebpack />, color: 'text-blue-400', bg: 'bg-blue-100' },
     { name: 'Postman', icon: <SiPostman />, color: 'text-orange-500', bg: 'bg-orange-100' },
 ];
 
-const Home = () => {
+// Gentle Spring Breeze Effect for March-April
+const SpringBreezeEffect = () => {
+  return (
+    <>
+      {/* Gentle wind particles (cherry blossom petals) */}
+      <div className="fixed inset-0 z-10 pointer-events-none overflow-hidden">
+        {Array.from({ length: 40 }).map((_, i) => (
+          <div
+            key={`petal-${i}`}
+            className="absolute text-xl"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              color: '#FFB6C1',
+              opacity: 0.4 + Math.random() * 0.4,
+              animation: `float ${15 + Math.random() * 20}s linear infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+              transform: `scale(${0.5 + Math.random() * 0.5})`,
+            }}
+          >
+            ❀
+          </div>
+        ))}
+        
+        {Array.from({ length: 30 }).map((_, i) => (
+          <div
+            key={`breeze-${i}`}
+            className="absolute"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${20 + Math.random() * 40}px`,
+              height: '2px',
+              background: 'linear-gradient(90deg, transparent, rgba(144, 238, 144, 0.3), transparent)',
+              animation: `breezeFlow ${8 + Math.random() * 12}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 3}s`,
+            }}
+          />
+        ))}
+      </div>
+      
+      <style>{`
+        @keyframes float {
+          0% {
+            transform: translateY(0) translateX(0) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.7;
+          }
+          90% {
+            opacity: 0.7;
+          }
+          100% {
+            transform: translateY(-50vh) translateX(20vw) rotate(360deg);
+            opacity: 0;
+          }
+        }
+        
+        @keyframes breezeFlow {
+          0%, 100% {
+            transform: translateX(0) scaleX(1);
+            opacity: 0.3;
+          }
+          50% {
+            transform: translateX(100px) scaleX(1.5);
+            opacity: 0.6;
+          }
+        }
+      `}</style>
+    </>
+  );
+};
 
+// Summer Effect
+const SummerEffect = () => {
+  return (
+    <div className="fixed inset-0 z-10 pointer-events-none overflow-hidden">
+      {Array.from({ length: 60 }).map((_, i) => (
+        <div
+          key={`sunray-${i}`}
+          className="absolute rounded-full"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            width: `${1 + Math.random() * 3}px`,
+            height: `${1 + Math.random() * 3}px`,
+            backgroundColor: '#FFD700',
+            opacity: 0.3 + Math.random() * 0.4,
+            animation: `sunrayFall ${8 + Math.random() * 12}s linear infinite`,
+            animationDelay: `${Math.random() * 5}s`,
+          }}
+        />
+      ))}
+      
+      <style>{`
+        @keyframes sunrayFall {
+          0% {
+            transform: translateY(-100%) translateX(0);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.8;
+          }
+          90% {
+            opacity: 0.8;
+          }
+          100% {
+            transform: translateY(100vh) translateX(20px);
+            opacity: 0;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+// Autumn Effect
+const AutumnEffect = () => {
+  const leaves = ['🍁', '🍂'];
+  
+  return (
+    <div className="fixed inset-0 z-10 pointer-events-none overflow-hidden">
+      {Array.from({ length: 30 }).map((_, i) => {
+        const leaf = leaves[Math.floor(Math.random() * leaves.length)];
+        return (
+          <div
+            key={`leaf-${i}`}
+            className="absolute text-2xl"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: '-5%',
+              animation: `leafFall ${15 + Math.random() * 20}s linear infinite`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          >
+            {leaf}
+          </div>
+        );
+      })}
+      
+      <style>{`
+        @keyframes leafFall {
+          0% {
+            transform: translateY(0) translateX(0) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.8;
+          }
+          90% {
+            opacity: 0.8;
+          }
+          100% {
+            transform: translateY(100vh) translateX(30vw) rotate(720deg);
+            opacity: 0;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+const Home = () => {
+    const [currentSeason, setCurrentSeason] = useState(null);
+    const [seasonalEffect, setSeasonalEffect] = useState('snow');
+
+    // Determine current Indian season
+    useEffect(() => {
+        const getIndianSeason = () => {
+            const now = new Date();
+            const currentMonth = now.getMonth() + 1;
+            
+            for (const [seasonKey, data] of Object.entries(INDIAN_SEASONS)) {
+                if (data.months.includes(currentMonth)) {
+                    return {
+                        key: seasonKey,
+                        name: data.name,
+                        effect: data.effect,
+                        color: data.color
+                    };
+                }
+            }
+            return INDIAN_SEASONS.WINTER;
+        };
+
+        const season = getIndianSeason();
+        setCurrentSeason(season);
+        setSeasonalEffect(season.effect);
+    }, []);
+
+    // Render seasonal effect
+    const renderSeasonalEffect = () => {
+        switch(seasonalEffect) {
+            case 'snow':
+                return (
+                    <Snowfall
+                        color="#82C3D9"
+                        style={{
+                            position: 'fixed',
+                            width: '100vw',
+                            height: '100vh',
+                            zIndex: 10,
+                            pointerEvents: 'none',
+                        }}
+                    />
+                );
+            case 'springBreeze':
+                return <SpringBreezeEffect />;
+            case 'summer':
+                return <SummerEffect />;
+            case 'autumn':
+                return <AutumnEffect />;
+            default:
+                return (
+                    <Snowfall
+                        color="#82C3D9"
+                        style={{
+                            position: 'fixed',
+                            width: '100vw',
+                            height: '100vh',
+                            zIndex: 10,
+                            pointerEvents: 'none',
+                        }}
+                    />
+                );
+        }
+    };
 
     return (
         <>
+            {renderSeasonalEffect()}
+
+            {/* Your Original UI - EXACTLY AS IT WAS */}
             <div className="bg-black md:m-auto pt-18 px-4 md:px-8">
-
                 <div className=" flex flex-col-reverse md:flex-row  justify-around  gap-auto md:gap-4  py-4  mt-2 md:mt-12">
-
                     <div className="relative w-full md:w-3xl z-20 text-white p-6 pl-10 pr-8 md:pr-20 sm:pl-10 lg:pr-20">
                         <div
                             class="absolute -left-6 sm:left-16 top-20 sm:top-24 md:-left-12 xl:-left-16 md:top-16 xl:top-24 rotate-[-90deg] text-sm tracking-widest flex flex-row justify-start gap-2">
@@ -123,9 +371,8 @@ With expertise across both front-end and back-end development, I deliver end-to-
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
 
-export default Home
+export default Home;
